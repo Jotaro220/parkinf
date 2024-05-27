@@ -1,0 +1,22 @@
+{% extends "main.html" %}
+{% block car %}
+
+{% load static %}
+<link href="{% static 'card.css' %}" rel="stylesheet" type="text/css" />
+
+<div class="container">
+  {% for car in object_list %}
+  <div class="card" onClick="location.href='{{ car.get_absolute_url }}'">
+    <img class="card-img-top" src="{{car.cardImage.url}}" width="100%">
+    <div class="name_car">
+      {{car.model}}
+    </div>
+    <div class="prise_car">
+      {{car.price}} руб./ сут
+    </div>
+  </div>  
+  {% endfor %}
+  <script type="text/javascript" src="{% static 'ratings.js' %}"></script>
+
+</div>
+{%endblock%}

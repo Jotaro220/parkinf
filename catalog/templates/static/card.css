@@ -1,0 +1,39 @@
+.container {
+  margin: 20px 0px 0px 20px;
+  display: flex;
+  gap: 0px;
+  align-items: beetwen-evenly;
+  justify-content: center
+}
+
+.card{
+  padding: 0;
+  border: 1px inset #3e1d1d;
+  width:200px;
+  border-radius: 3px;
+  transition: transform .2s;
+  margin-right: 15px;
+}
+.card:hover {
+  transform: scale(1.1);
+}
+.card-img-top{
+
+  border-top-right-radius: 3px;
+  border-top-left-radius: 3px;
+}
+.name_car{
+  padding: 0 0 0 5px;
+  font-size: 20px;
+}
+
+.prise_car{
+  padding: 0 0 0 5px;
+  color: orange;
+  font-size: 20px;
+}
+.container_button {
+  display: flex;
+  justify-content: flex-end;
+}
+

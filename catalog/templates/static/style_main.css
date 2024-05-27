@@ -1,0 +1,155 @@
+@font-face {
+  font-style: normal;
+  font-weight: 400;
+  /* Браузер сначала попробует найти шрифт локально */
+  src: local("Roboto"),
+    /* Если не получилось, загрузит woff2 */
+    url("/fonts/roboto.woff2") format("woff2"),
+    /* Если браузер не поддерживает woff2, загрузит woff */
+    url("/fonts/roboto.woff") format("woff");
+}
+
+body {
+  margin: 0;
+  font-family: "Roboto", "Arial", sans-serif;
+  color: #818181;
+  line-height: 1.5;
+  font-size: 25px;
+}
+
+
+.advantages {
+  display: flex;
+  justify-content: beetwen-evenly;
+  margin: 20px 80px 20px 80px;
+  /* border: 1px inset #fff;
+  box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.4);
+  border-radius: 15px; */
+}
+
+.advantage {
+  flex: 1;
+  margin: 10px auto;
+  padding: 10px 15px;
+  height: 180px;
+  max-width: 300px;
+  text-align: start;
+  background-color: #ffffff;
+  border: 1px inset #fff;
+
+  box-shadow: 0px 5px 10px 0px rgba(0, 0, 0, 0.5);
+  border-radius: 15px;
+}
+
+
+
+.advantage.active {
+  transform: translateY(-5px);
+  box-shadow: inset 0px 10px 20px 5px rgba(0, 0, 0, 0.5);
+}
+
+.advantage h3 {
+  color: gray;
+  text-align: center;
+  font-size: 20px;
+  margin-top: 0;
+  margin-bottom: 1rem;
+}
+
+/* h4 {
+  color: gray; 
+  text-align: center;
+  margin-top: 0;
+  margin-bottom: 1rem;
+  font-size: 40px;
+} */
+.advatage p {
+  color: gray;
+  text-align: start;
+  /* padding: 5px; */
+  font-size: 10px;
+}
+
+.pretty_header {
+  margin: 40px auto;
+  font-family: 'Play', sans-serif;
+  color: gray;
+}
+
+.pretty_text h4 {
+  text-align: center;
+}
+
+
+.img_text{
+  display: flex;
+  justify-content: center;
+  color: #fff;
+  text-align: center;
+  font-size: 30px;
+}
+
+.container_text {
+    position: relative;
+    text-align: center;
+    color: white;
+}
+
+.rating-buttons{
+  margin: 0px 0px 0px 300px;
+}
+.btn-primary {
+    border-radius: 10px;
+    color: white;
+    transition: .2s linear;
+    background: #3989c6;
+    height: 30px;
+    weight: 20px;
+}
+.btn-primary:hover {
+    box-shadow: 0 0 0 2px white, 0 0 0 4px #9ac2d6;
+}
+
+.btn-secondary {
+    border-radius: 10px;
+    color: white;
+    transition: .2s linear;
+    background: #f69309;
+    height: 30px;
+}
+
+.btn-secondary:hover {
+    box-shadow: 0 0 0 2px white, 0 0 0 4px #e2b24b;
+}
+.rating-sum{
+  background: white;
+  border: 3px;
+  border-color: black;
+}
+
+
+/* .rating-buttons{
+  margin: 0px 0px 0px 300px;
+}
+
+.btn-primary {
+    border-radius: 10px;
+    color: white;
+    transition: .2s linear;
+    background: #0B63F6;
+}
+
+.btn-primary:hover {
+    box-shadow: 0 0 0 2px white, 0 0 0 4px #3C82F8;
+}
+
+.btn-secondary {
+    border-radius: 10px;
+    color: white;
+    transition: .2s linear;
+    background: #f69309;
+}
+
+.btn-secondary:hover {
+    box-shadow: 0 0 0 2px white, 0 0 0 4px #e2b24b;
+} */

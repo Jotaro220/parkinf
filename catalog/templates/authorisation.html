@@ -1,0 +1,40 @@
+{%extends 'base_generic.html'%}
+
+{%block content%}
+  {% load static %}
+  <link href="{% static 'registr.css' %}" rel="stylesheet" type="text/css" />  
+</header>
+
+  <div class="container">
+    <h3>Авторизация</h3>
+    <p>Пожалуйста, заполните все поля для входа в аккаунт</p>
+    <form action="" class="form" id="login-form">
+
+
+      <label for="login"><b>Логин</b></label>
+        <div class="input-box">
+      <input data-min-Length="4" data-max-Length="30" data-no-Space="true"
+        type="text" placeholder="Введите логин" id="login" name="login">
+          </div>
+
+      <label for="psw"><b>Пароль</b></label>
+          <div class="input-box">
+      <input data-min-Length="8" data-max-Length="30"
+        type="password" placeholder="Введите пароль" id="psw" name="psw">
+            </div>
+
+
+      <div class="clearfix">
+        <button type="button" class="cancelbtn">Отмена</button>
+        <button type="submit" class="signupbtn">Войти</button>
+          </div>
+        </form>
+    <a href="{% url 'registration' %}">Зарегистрироваться</a>
+      </div>
+<script type="text/javascript" src="{% static 'backend.js' %}"></script>
+  <script type="text/javascript" src = "{% static 'registration.js' %}"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+{%endblock%}
+
+
+

@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<!-- // kris
+// lololoshka -->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>PartkINF</title>
+  {% load static %}
+  <link href="{% static 'style_main.css' %}" rel="stylesheet" type="text/css" />
+  <link href="{% static 'advantage.css' %}" rel="stylesheet" type="text/css" />
+
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat+Alternates:ital@1&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aos@2.3.1/dist/aos.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Fredoka+One&family=Play&display=swap" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/aos@2.3.1/dist/aos.js"></script>
+
+</head>
+
+<body>
+
+  <div class="panel">
+    <div class="row">
+      {% block panel %}
+      <li><a href="{% url 'main' %}">Главное</a></li>
+      <!-- <li><a href="{% url 'main' %}#autopark">Автопарк</a></li> -->
+      <li><a href="{% url 'car_list' %}">Автопарк</a></li>
+      <li><a href="{% url 'about us' %}">О нас</a></li>
+      {% if request.user.is_authenticated %}
+      <li><a href="{% url 'profile_detail' request.user.profile.slug %}"> Профиль</a></li>
+      {% else %}
+      <li><a href="{% url 'authorisation' %}">Авторизация</a></li>
+      {% endif %}
+      {% endblock %}
+    </div>
+  </div>
+
+  {% block content %}
+  {% endblock %}
+
+
+
+  <div class="footer_wrap">
+    <div class="footer">
+      <div class="row">
+        <a href="#"><i class="fa fa-telegram"></i></a>
+        <a href="#"><i class="fa fa-vk"></i></a>
+      </div>
+      <div class="row">
+        <ul>
+          <li><a href="{% url 'about us' %}#contact">Наши контакты</a></li>
+          <li><a href="#">Связь</a></li>
+          <li><a href="#">Privacy Policy</a></li>
+          <li><a href="#">Условия и сроки</a></li>
+          <li><a href="#">Трудоустройство</a></li>
+        </ul>
+      </div>
+
+      <div class="row">
+        ParkINF Copyright © 2024 ParkINF - Все права защищены
+      </div>
+    </div>
+  </div>
+
+</body>
+</html>

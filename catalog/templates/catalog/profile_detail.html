@@ -1,0 +1,44 @@
+{% extends 'base_generic.html' %}
+
+{% block content %}
+{% load static %}
+<link href="{% static 'profile.css' %}" rel="stylesheet" type="text/css" />
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Профиль пользователя</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="profile-container">
+        <div class="profile-header">
+            <img src="https://chery-autolight.ru/img/28680915.png" alt="Фото пользователя" class="profile-photo">
+            <p class="profile-username"> {{ profile.user.username }} </p>            
+        </div>
+        
+        <div class="profile-info">
+            <p class="profile-name">Имя и фамилия: {{  profile.user.get_full_name }} </p>
+            <p class="profile-email">Email: {{profile.user.email}}</p>
+        </div>
+        <div class="profile-stats">
+            <p class="profile-rentals">Арендовано автомобилей: </p>
+            <div class="order">
+                <p class="order-number"> Номер заказа: {{profile.order.number}}</p>
+                <p class="order-model"> Авто: {{profile.order.car.model}}</p>
+                <p class="order-dateStart"> Дата начала: {{profile.order.due_start}}</p>
+                <p class="order-dateEnd"> Дата окончания: {{profile.order.due_back}}</p>
+                <p class="order-cost"> К оплате: {{profile.order.cost}}</p>
+                </div>
+        </div>
+        <div class="profile-actions">
+            <form action="{% url 'logout' %}" method="post">
+                  {% csrf_token %}
+                  <button class="btn-logout" type="submit">Выйти</button>
+               </form>
+        </div>
+    </div>
+</body>
+</html>
+{% endblock %}

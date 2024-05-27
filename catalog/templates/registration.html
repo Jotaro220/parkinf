@@ -1,0 +1,57 @@
+{%extends "base_generic.html"%}
+{%block content%}
+  {% load static %}
+  <link href="{% static 'registr.css' %}" rel="stylesheet" type="text/css" />  
+
+  <div class="container">
+    <h3>Регистрация</h3>
+    <p>Пожалуйста, заполните все поля для создание аккаунта</p>
+    <form action="" class="form" id="registration-form">
+
+      <!-- <hr> -->
+      <label for="login"><b>Логин</b></label>
+      <div class="input-box">
+      <input data-min-Length="4" data-max-Length="30" data-no-Space="true"
+        type="text" placeholder="Введить логин" id="login" name="login">
+        </div>
+      
+      <label for="surname"><b>Фамилия</label>
+      <div class="input-box">
+      <input data-min-Length="2" data-max-Length="30" data-no-Space="true" data-name="true"
+        type="text" placeholder="Введите фамилию" id="surname" name="surname" >
+      </div>
+      
+      <label for="name"><b>Имя</b></label>
+      <div class="input-box">
+      <input data-min-Length="2" data-max-Length="30" data-no-Space="true" data-name="true"
+        type="text" placeholder="Введить имя" id="name" name="name">
+        </div>
+
+      <label for="email"><b>Почта</b></label>
+        <div class="input-box">
+      <input data-min-Length="6" data-max-Length="30" data-no-Space="true" data-valid-Email="true" 
+        type="text" placeholder="Введите почту" id="email" name="email">
+          </div>
+
+      <label for="psw"><b>Пароль</b></label>
+          <div class="input-box">
+      <input data-min-Length="8" data-max-Length="30"
+        type="password" placeholder="Введите пароль" id="psw" name="psw">
+            </div>
+
+      <label for="psw-repeat"><b>Повторите пароль</b></label>
+            <div class="input-box">
+      <input data-min-Length="8" data-max-Length="30"
+        type="password" placeholder="Повторите пароль" id="psw-repeat" name="psw-repeat">
+              </div>
+
+
+      <div class="clearfix">
+        <button type="button" class="cancelbtn">Отмена</button>
+        <button type="submit" class="signupbtn">Зарегестрироваться</button>
+      </div>
+    </form>
+  </div>
+  <script type="text/javascript" src = "{% static 'registration.js' %}"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+{%endblock%}

@@ -1,0 +1,163 @@
+.mySlides {display: none;}
+img {vertical-align: middle;}
+
+.slideshow-container {
+  display: flex;
+  flex-wrap:wrap;
+  align-content: space-around;
+  justify-content: center;
+  
+  max-width: 60%;
+  padding:50px 40px 100px 40px;
+  height: 500px;
+  max-height: 500px;
+  box-sizing: border;
+}
+
+.text {
+  color: #f2f2f2;
+  font-size: 15px;
+  padding: 8px 12px;
+  position: absolute;
+  bottom: 8px;
+  width: 100%;
+  text-align: center;
+}
+
+.numbertext {
+  color: #f2f2f2;
+  font-size: 12px;
+  padding: 8px 12px;
+  position: absolute;
+  top: 0;
+}
+
+/* The dots/bullets/indicators */
+.dot {
+  height: 15px;
+  width: 15px;
+  margin: 0 2px;
+  background-color: #bbb;
+  border-radius: 50%;
+  display: inline-block;
+  transition: background-color 0.6s ease;
+}
+
+.active {
+  background-color: #717171;
+}
+
+/* Fading animation */
+.fade {
+  border: 1px solid #818181;
+  border-radius: 20px;
+  -webkit-animation-name: fade;
+  -webkit-animation-duration: 1.5s;
+  animation-name: fade;
+  animation-duration: 1.5s;
+}
+
+@-webkit-keyframes fade {
+  from {opacity: .4} 
+  to {opacity: 1}
+}
+
+
+@keyframes fade {
+  from {opacity: .4} 
+  to {opacity: 1}
+}
+
+
+
+.slide_container {
+  margin: 30px 30px;
+  display: flex;
+  align-content: center;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.round{
+  border: 1px solid gray;
+  border-radius: 20px;
+}
+
+table{
+  max-width: 60%;
+  width: 1000p;
+  empty-cells: hide;
+  /* color: gray; */
+  /* font-size: 20px; */
+  gap: 30px;
+  background: white;
+  border-collapse: collapse;
+  border: 1px solid gray;
+  text-align: left;
+}
+
+td {
+  padding: 9px 8px;
+  border: 1px dashed #cfc9c9;
+  transition: .3s linear;
+  color: gray;
+  font-size: 15px;
+}
+
+th {
+  width: 30%;  
+  padding: 10px 0 0 10px;
+  color: gray;
+  font-size: 14px;
+  text-align: left;
+  /* border-right: 1px dashed #cfc9c9; */
+  border-left: 1px dashed #cfc9c9; 
+  border-bottom: 1px dashed #cfc9c9;
+}
+
+
+caption {
+  caption-side: top;
+  text-align: center;
+  padding: 10px;
+  font-size: 20px;
+  color: solid gray;
+}
+
+.table-wrap{
+  margin: 0px auto;
+  display: flex;
+  align-content: center;
+  justify-content: center;
+}
+
+.button {
+  display: inline-block;	
+  padding: 0px 60px 0px 7px; 
+  margin: 0px 15px 15px 5px;
+  outline: none;
+  border: 1px solid #ff6600;
+  border-radius: 5px;
+  height: 30px;
+  line-height: 27px;
+  text-align: center;
+  width: 10px;
+  font-size: 12px;
+  font-weight: 60px;
+  text-decoration: none;
+  color: #000000;
+  background-color: orange;
+  box-shadow: 0 4px 6px rgb(65 132 144 / 10%), 0 1px 3px rgb(0 0 0 / 8%);
+  touch-action: manipulation;  
+  vertical-align: top;
+  transition: box-shadow 0.2s;
+}
+
+.button:nth-child {
+  transition-delay: 150ms;
+}
+
+
+.button:is(:hover) {
+  background-color: transparent;
+}

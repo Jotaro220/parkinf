@@ -1,0 +1,145 @@
+{%extends 'base_generic.html'%}
+{% block content %}
+{% load static %}
+<link href="{% static 'car.css' %}" rel="stylesheet" type="text/css" />
+<link href="{% static 'model.css' %}" rel="stylesheet" type="text/css" />
+
+
+<div class="slide_container">
+  <div class="slideshow-container">
+    <div class="mySlides fade">
+      <img src="{{car.slideImage1.url}}" width="600px" height="400px" class="round">
+      <div class="numbertext">1 / 2</div>
+    </div>
+
+    <div class="mySlides fade">
+      <img src="{{car.slideImage2.url}}" width="600px" height="400px" class="round">
+      <div class="numbertext">2 / 2</div>
+    </div>
+
+    <div style="text-align:center">
+      <span class="dot"></span>
+      <span class="dot"></span>
+    </div>
+  </div>
+
+
+  <div class="table-wrap">
+    <table>
+      <caption>Технические характеристики</caption>
+
+      <tr>
+        <th>ДВИГАТЕЛЬ</th>
+        <th></th>
+        <th>КУЗОВ</th>
+        <th></th>
+      </tr>
+      <tr>
+        <td>Тип двигателя</td>
+        <td>{{car.type}}</td>
+        <td>Длина (мм)</td>
+        <td>{{car.length}}</td>
+      </tr>
+      <tr>
+        <td>Максимальный крутящий момент (Нм)</td>
+        <td>{{car.maxTorque}}</td>
+        <td>Высота (см)</td>
+        <td>{{car.height}}</td>
+      </tr>
+      <tr>
+        <td>Мощность (л.с.)</td>
+        <td>{{car.power}}</td>
+        <td>Ширина (см)</td>
+        <td>{{car.width}}</td>
+      </tr>
+      <tr>
+        <td>Объём топливного бака (л)</td>
+        <td>{{car.volume}}</td>
+        <td>Колесная база (см)</td>
+        <td>2980</td>
+      </tr>
+      <tr>
+        <th>ТРАНСМИССИЯ И УПРАВЛЕНИЕ</th>
+        <th></th>
+        <th>ЭКСПЛУАТАЦИОННЫЕ ПОКАЗАТЕЛИ</th>
+        <th></th>
+      </tr>
+      <tr>
+        <td>Тип коробки передач</td>
+        <td>{{car.transmission}}</td>
+        <td>Разгон 0-100 км/ч (с)</td>
+        <td>{{car.acceleration}}</td>
+      </tr>
+      <tr>
+        <td>Привод</td>
+        <td>{{car.drive}}</td>
+        <td>Год выпуска</td>
+        <td>{{car.yearManufacture}}</td>
+      </tr>
+      <tr>
+        <td>Количество мест в автомобиле</td>
+        <td>{{car.seats}}</td>
+        <td>Максимальная скорость (км/ч)</td>
+        <td>{{car.maxSpeed}}</td>
+      </tr>
+
+    </table>
+  </div>
+</div> 
+
+<div class="rating-buttons">
+  <button class="btn btn-sm btn-primary" data-car="{{ car.id }}" data-value="1">Лайк</button>
+  <button class="btn btn-sm btn-secondary" data-car="{{ car.id }}" data-value="-1">Дизлайк</button>
+  <button class="btn btn-sm rating-sum">{{ car.get_sum_rating }}</button>
+</div>
+
+<div class="container_button">
+  <a href="#{{car.model}}" class="button">Арендовать</a>
+</div>
+
+
+<div id="{{car.model}}" class="modal">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h3 class="modal-title">Аренда {{car.model}}</h3>
+        <a href="#close" title="Close" class="close">×</a>
+      </div>
+      <div class="modal-body">    
+          <form action="" class="form" id="order-form">
+             <label for="date_start"><b>Дата начала</label>
+               <div class="input-box">
+                <input type="date" id="dateStart">
+               </div>
+            <label for="date_start"><b>Дата окончания</label>
+              <div class="input-box">
+                <input type="date" id="dateEnd">
+               </div>
+            <label for="Adress"><b>Откуда вы хотите забрать авто</label>
+              <div class="input-box">
+                <input type="text" id="adress" placeholder="Введите адрес" required>
+               </div>
+            <label>Итого к оплате:</label>
+            <div class = "payment" id = "payment">
+              {{car.price}} * 1 = {{car.price}}
+            </div>
+          <div class="clearfix">
+            <button type="submit" class="btn-order" data-car="{{ car.id }}">Арендовать</button>
+              </div>
+            </form>
+      </div>
+    </div>
+  </div>
+  <script type="text/javascript" src="{% static 'order.js' %}"></script>
+</div>
+
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+<script type="text/javascript" src="{% static 'backend.js' %}"></script>
+<script type="text/javascript" src="{% static 'ratings.js' %}"></script>
+
+<script type="text/javascript" src = "{% static 'slide.js' %}"></script>
+
+{%endblock%}
